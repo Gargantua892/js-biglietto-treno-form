@@ -35,9 +35,6 @@ h4{
     color: #fff;
 }
 
-.card-body div:last-child{
-    width: 100%;
-}
 
 .card-body, .gap{
     gap: 30px 40px;
