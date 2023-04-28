@@ -1,0 +1,73 @@
+body{
+    height: calc(100vh - 71.48px);
+}
+
+main{
+    height: 100%;
+    background-color: aliceblue;
+}
+
+h4{
+    font-size: 16px;
+}
+
+.card{
+    border-radius: 0px!important;
+    border:0px!important;
+}
+
+.bi-train-front-fill::before {
+    font-size: 36px;
+}
+
+.card-header, header{
+    border-radius: 0px!important;
+    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+    color: #fff!important;
+}
+
+.card-header h3{
+    text-transform: capitalize;
+}
+
+.card-info{
+    background-color: #242424;
+    color: #fff;
+}
+
+.card-body div:last-child{
+    width: 100%;
+}
+
+.card-body, .gap{
+    gap: 30px 40px;
+}
+
+.card-footer{
+    background-color: #fff!important;
+    margin: 0px 16px;
+    border-top: 1px dotted #E1E9FA!important;
+}
+
+.distance{
+    color: #E1E9FA;
+}
+
+.label{
+    color: #a3a3a3;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-bottom:0px;
+}
+
+.info{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#total-price{
+    display: inline-block;
+}
