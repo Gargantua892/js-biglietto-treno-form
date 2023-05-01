@@ -37,28 +37,36 @@
         </div>
     </header>
     <main>
-        <div class="container train-form p-5 h-25 d-flex align-items-center">
-            <div class="row align-items-center">
-                <div class="col-12 d-flex flex-column align-items-center">
-                    <div class="form-container w-75">
-                        <form class="row g-3">
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="dCity" placeholder="Città di partenza" value="">
+        <div class="container-fluid train-form p-5 d-flex align-items-center position-relative">
+            <div class="row align-items-center overlay">
+                <div class="col-12 text-center p-5 index">
+                    <h1>Prenotare il treno è finalmente semplice</h1>
+                    <p> Compara tutte le soluzioni di viaggio e trova il biglietto perfetto per te.</p>
+                </div>
+                <div class="col-md-6 offset-md-3 col-12 d-flex flex-column align-items-center index">
+                    <div class="form-container p-5">
+                        <form class="row g-3 row-cols-1">
+                            <div class="col p-1">
+                                <input type="text" class="form-control form-control-lg" id="dCity" placeholder="Città di partenza">
                             </div>
-                            <div class="col-md-6">
-                                <input type="text" class="form-control" id="aCity" placeholder="Città di arrivo">
+                            <div class="col mb-4 p-1">
+                                <input type="text" class="form-control form-control-lg" id="aCity" placeholder="Città di arrivo">
                             </div>
-                            <div class="col-md-5">
-                                <input type="text" class="form-control" id="name" placeholder="Nome">
+                            <div class="col p-1">
+                                <input type="text" class="form-control form-control-lg" id="name" placeholder="Nome">
                             </div>
-                            <div class="col-md-5">
-                                <input type="text" class="form-control" id="surname" placeholder="Cognome">
+                            <div class="col p-1">
+                                <input type="text" class="form-control form-control-lg" id="surname" placeholder="Cognome">
                             </div>
-                            <div class="col-md-2">
-                                <input type="text" class="form-control" id="age" placeholder="Età">
+                            <div class="col mb-3 p-1">
+                                <input type="text" class="form-control form-control-lg" id="age" placeholder="Età">
+                            </div>
+                            <div class="col p-1">
+                                <input type="text" class="form-control form-control-lg" id="km" placeholder="km da percorrere">
                             </div>
                             <div class="col-12 text-center">
-                                <input  id="ticketGen" type="button" value="Crea biglietto" class="btn btn-primary"></input>
+                                <input id="ticketGen" type="button" value="Crea biglietto"
+                                    class="btn btn-primary"></input>
                                 <button type="submit" class="btn btn-outline-primary">Annulla</button>
                             </div>
                         </form>
@@ -66,81 +74,84 @@
                 </div>
             </div>
         </div>
-        <div class="container card-container">
-            <div class="col-12 d-flex flex-column align-items-center">
-                <!-- Card -->
-                <div class="card shadow">
+        <div id="card-container" class="container card-container pb-5 mt-5">
+            <div class="row">
+                <div class="col-12 d-flex flex-column align-items-center">
+                    <!-- Card -->
+                    <div class="card shadow">
 
-                    <!-- card header -->
-                    <!-- <div class="card-header d-flex">
-                            <div class="col col-md-2 d-flex align-items-center justify-content-center">
-                                <img width="60" src="img/boolean-logo.png" alt="">
-                            </div>
-                            <div class="col col-md-10 d-flex flex-column justify-content-between">
-                                <h3>Departure City</h3>
+                        <!-- card header -->
+                        <!-- <div class="card-header d-flex">
+                                <div class="col col-md-2 d-flex align-items-center justify-content-center">
+                                    <img width="60" src="img/boolean-logo.png" alt="">
+                                </div>
+                                <div class="col col-md-10 d-flex flex-column justify-content-between">
+                                    <h3>Departure City</h3>
+                                    <div class="distance-container d-flex align-items-center">
+                                        <i class="bi bi-arrow-down-short" style="font-size: 2rem;"></i><span class="distance">Distance</span>
+                                    </div>
+                                    <h3>Arrival city</h3>
+                                </div>
+                            </div> -->
+
+
+                        <div class="card-header d-flex align-items-center py-4">
+                            <img width="60" src="img/boolean-logo.png" alt="">
+                            <div class="train-info d-flex flex-column justify-content-between ms-3">
+                                <h3 id="departure">Departure City</h3>
                                 <div class="distance-container d-flex align-items-center">
-                                    <i class="bi bi-arrow-down-short" style="font-size: 2rem;"></i><span class="distance">Distance</span>
+                                    <i class="bi bi-arrow-down-short"></i><span class="distance"
+                                        id="distance">Distance</span>
                                 </div>
-                                <h3>Arrival city</h3>
+                                <h3 id="arrival">Arrival city</h3>
                             </div>
-                        </div> -->
+                        </div>
+                        <!-- / card header -->
+                        <div class="card-info d-flex py-3 ps-4">
+                            <div class="d-flex align-items-center justify-content-center gap">
+                                <i class="bi bi-train-front-fill"></i>
+                                <div class="d-flex gap">
+                                    <div class="">
+                                        <h6 class="label">Partenza</h6>
+                                        <h4 id="departure-time" class="info">Label</h4>
+                                    </div>
+                                    <div class="">
+                                        <h6 class="label">Seggiolino</h6>
+                                        <h4 id="seggiolino" class="info">Label</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body d-flex flex-wrap p-4 my-2">
+                            <div class="row row-cols-2 row-gap-3">
+                                <div class="info col">
+                                    <h6 class="label">Nome e Cognome</h6>
+                                    <h4 id="ticketPassengerName" class="info">Label</h4>
+                                </div>
+                                <div class="info col">
+                                    <h6 class="label">Tipo di passeggero</h6>
+                                    <h4 id="tipo-passeggero" class="info">Label</h4>
+                                </div>
+                                <div class="info col">
+                                    <h6 class="label">Tipologia</h6>
+                                    <h4 class="info">Sola andata</h4>
+                                </div>
+                                <div class="info col">
+                                    <h6 class="label">Valido fino</h6>
+                                    <h4 id="current-date" class="info">Settembre 2023</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer py-4">
+                            <h3 class="label">Totale</h3>
+                            <h2 id="total-price" class="me-3">0,00€</h2><span id="discount-label"></span>
+                        </div>
+                    </div>
+                    <!-- Fine Card -->
 
-
-                    <div class="card-header d-flex align-items-center py-4">
-                        <img width="60" src="img/boolean-logo.png" alt="">
-                        <div class="train-info d-flex flex-column justify-content-between ms-3">
-                            <h3 id="departure">Departure City</h3>
-                            <div class="distance-container d-flex align-items-center">
-                                <i class="bi bi-arrow-down-short"></i><span class="distance"
-                                    id="distance">Distance</span>
-                            </div>
-                            <h3 id="arrival">Arrival city</h3>
-                        </div>
-                    </div>
-                    <!-- / card header -->
-                    <div class="card-info d-flex py-3 ps-4">
-                        <div class="d-flex align-items-center justify-content-center gap">
-                            <i class="bi bi-train-front-fill"></i>
-                            <div class="d-flex gap">
-                                <div class="">
-                                    <h6 class="label">Partenza</h6>
-                                    <h4 id="departure-time" class="info">Label</h4>
-                                </div>
-                                <div class="">
-                                    <h6 class="label">Seggiolino</h6>
-                                    <h4 id="seggiolino" class="info">Label</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body d-flex flex-wrap p-4 my-2">
-                        <div class="row row-cols-2 row-gap-3">
-                            <div class="info col">
-                                <h6 class="label">Nome e Cognome</h6>
-                                <h4 id="ticketPassengerName" class="info">Label</h4>
-                            </div>
-                            <div class="info col">
-                                <h6 class="label">Tipo di passeggero</h6>
-                                <h4 id="tipo-passeggero" class="info">Label</h4>
-                            </div>
-                            <div class="info col">
-                                <h6 class="label">Tipologia</h6>
-                                <h4 class="info">Sola andata</h4>
-                            </div>
-                            <div class="info col">
-                                <h6 class="label">Valido fino</h6>
-                                <h4 id="current-date" class="info">Settembre 2023</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-footer py-4">
-                        <h3 class="label">Totale</h3>
-                        <h2 id="total-price" class="me-3">0,00€</h2><span id="discount-label"></span>
-                    </div>
                 </div>
-                <!-- Fine Card -->
-
             </div>
+
         </div>
         </div>
 
